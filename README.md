@@ -24,3 +24,11 @@ For example:
 ```
 If the plan above will be completed 2 weeks straight, 
 then it can be upgraded from version 0.0.1 to 0.0.2 and settings can be modified.
+
+
+#### Creating a tag
+Create and push a tag:
+```
+git tag -a v0.1.1 -m 'brief description of an upgrade'
+git push origin v0.1.1
+```
