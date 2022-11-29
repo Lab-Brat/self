@@ -1,0 +1,41 @@
+# self v0.2.0
+---
+Exercise:
+  - task: "Go to the gym"
+    times: 4
+    status: '**'
+
+  - task: "Run/Walk"
+    times: 2
+    details:
+      - "Outdoors >= 10km"
+      - "Tredmill >=  5km"
+    status: ''
+
+  - task: "Standing desk"
+    times: 5
+    details:
+      - ">= 1h"
+    status: ''
+
+Language:
+  - task: "GRE Vocabulary"
+    times: 3
+    status: '*'
+
+Learning:
+  - task: "Reading"
+    times: 6
+    status: '**'
+
+  - task: "Python"
+    times: 2
+    details:
+      - ">= 1h"
+    status: ''
+
+  - task: "Jenkins"
+    times: 2
+    details:
+      - ">= 1h"
+    status: ''
