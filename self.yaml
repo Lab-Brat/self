@@ -10,7 +10,7 @@ Exercise:
     details:
       - "Outdoors >= 10km"
       - "Tredmill >=  5km"
-    status: ''
+    status: '*'
 
   - task: "Standing desk"
     times: 5
