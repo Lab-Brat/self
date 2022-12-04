@@ -3,20 +3,20 @@
 Exercise:
   - task: "Go to the gym"
     times: 4
-    status: '***'
+    status: '****'
 
   - task: "Run/Walk"
     times: 2
     details:
       - "Outdoors >= 10km"
       - "Tredmill >=  5km"
-    status: '*'
+    status: '**'
 
   - task: "Standing desk"
     times: 5
     details:
       - ">= 1h"
-    status: '***'
+    status: '****'
 
 Language:
   - task: "GRE Vocabulary"
@@ -32,7 +32,7 @@ Learning:
     times: 2
     details:
       - ">= 1h"
-    status: ''
+    status: '**'
 
   - task: "Jenkins"
     times: 2
