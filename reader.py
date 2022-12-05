@@ -25,12 +25,21 @@ class SelfYAML:
             case _:
                 print(f'{name} {dash}> {result*100:.2f}% done')
 
+    def _get_full_stat(self, section):
+        '''
+        Get completetion rate of the section.
+        '''
+        sm = 0
+        for i, task in enumerate(self.yml[section]):
+            sm += len(task['status']) / task['times']
+        return f"{(sm/(i+1))*100:.2f}%"
+
     def show_results(self):
         '''
         Get information about every task.
         '''
         for section in self.yml:
-            print(f"{section}:")
+            print(f"{section} [{self._get_full_stat(section)}]:")
             for task in self.yml[section]:
                 self._get_task_info(task)
             print('\n')
