@@ -3,7 +3,7 @@
 Exercise:
   - task: "Gym"
     times: 4
-    status: "***"
+    status: "****"
 
   - task: "Run/Walk"
     times: 2
@@ -16,12 +16,12 @@ Exercise:
     times: 4
     details:
       - ">= 1h"
-    status: "***"
+    status: "****"
 
 Language:
   - task: "GRE Vocabulary"
     times: 3
-    status: "*"
+    status: "**"
 
 Learning:
   - task: "Reading"
@@ -48,4 +48,4 @@ Learning:
 
   - task: "Advent Cyber"
     times: 7
-    status: "*****"
+    status: "******"
