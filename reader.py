@@ -32,17 +32,29 @@ class SelfYAML:
         sm = 0
         for i, task in enumerate(self.yml[section]):
             sm += len(task['status']) / task['times']
-        return f"{(sm/(i+1))*100:.2f}%"
+        # return f"{(sm/(i+1))*100:.2f}%"
+        return ((sm/(i+1))*100)
+
+    def _pass_or_fail(self, result, classes):
+        pass_or_fail = result/classes
+        if pass_or_fail < 80.0:
+            print('weekly goals _FAILED_')
+        else:
+            print('weekly goals _COMPLETED_')
 
     def show_results(self):
         '''
         Get information about every task.
         '''
-        for section in self.yml:
-            print(f"{section} [{self._get_full_stat(section)}]:")
+        final_result = 0.0
+        for i, section in enumerate(self.yml):
+            section_stat = self._get_full_stat(section)
+            final_result += section_stat
+            print(f"{section} [{section_stat:.2f}%]:")
             for task in self.yml[section]:
                 self._get_task_info(task)
             print('\n')
+        self._pass_or_fail(final_result, (i+1))
 
 
 if __name__ == '__main__':
