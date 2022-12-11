@@ -21,12 +21,12 @@ Exercise:
 Language:
   - task: "GRE Vocabulary"
     times: 3
-    status: "**"
+    status: "***"
 
 Learning:
   - task: "Reading"
     times: 6
-    status: "*****"
+    status: "******"
 
   - task: "Python"
     times: 2
@@ -48,4 +48,4 @@ Learning:
 
   - task: "Advent Cyber"
     times: 7
-    status: "******"
+    status: "*******"
