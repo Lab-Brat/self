@@ -3,7 +3,7 @@
 Exercise:
   - task: "Gym"
     times: 4
-    status: "**"
+    status: "***"
 
   - task: "Run/Walk"
     times: 2
@@ -16,7 +16,7 @@ Exercise:
     times: 4
     details:
       - ">= 1h"
-    status: "**"
+    status: "***"
 
 Language:
   - task: "GRE Vocabulary"
@@ -26,7 +26,7 @@ Language:
 Learning:
   - task: "Reading"
     times: 6
-    status: "****"
+    status: "*****"
 
   - task: "Python"
     times: 2
@@ -42,11 +42,11 @@ Learning:
 
   - task: "Advent Cyber"
     times: 7
-    status: "****"
+    status: "*****"
 
 Productivity:
   - task: "Daily Tasks"
     times: 5
     details: "Write down daily tasks for the next workday"
-    status: "****"
+    status: "*****"
 
