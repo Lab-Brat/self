@@ -1,37 +1,38 @@
-# self v0.3.1
+# self v0.3.2
 ---
 Exercise:
   - task: "Gym"
     times: 4
-    status: "****"
+    status: ""
 
-  - task: "Run/Walk"
-    times: 2
+  - task: "Run"
+    times: 1
     details:
       - "Outdoors >= 10km"
-      - "Tredmill >=  30min"
-    status: "*"
+    status: ""
 
-  - task: "SD/Walks"
+  - task: "Walk"
     times: 4
     details:
       - ">= 1h"
-    status: "****"
+    status: ""
+
 
 Language:
   - task: "GRE Vocabulary"
     times: 3
-    status: "*"
+    status: ""
 
-Learning:
+
+Education:
   - task: "Reading"
-    times: 6
-    status: "******"
+    times: 7
+    status: ""
 
-  - task: "Python"
+  - task: "OpenNebula"
     times: 2
     details:
-      - ">= 60min"
+      - ">= 30min"
     status: ""
 
   - task: "Jenkins"
@@ -40,13 +41,14 @@ Learning:
       - ">= 1h"
     status: ""
 
-  - task: "Advent Cyber"
-    times: 7
-    status: "******"
 
-Productivity:
+Organization:
   - task: "Daily Tasks"
-    times: 5
-    details: "Write down daily tasks for the next workday"
-    status: "*****"
+    times: 4
+    details: "Write down daily tasks for the next workday (except Wednesday)"
+    status: ""
 
+  - task: "Growth Plan"
+    times: 3
+    details: "Do things from your growth plan (study/tasks)"
+    status: ""
