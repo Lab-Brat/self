@@ -44,17 +44,20 @@ class SelfYAML:
         Determina wether the weekly goals were achieved or not.
         '''
         pass_or_fail = result/classes
-        if pass_or_fail < 80.0:
-            print('weekly goals _FAILED_')
+        pass_bar = 80.0
+        if pass_or_fail < pass_bar:
+            print(f'weekly goals _FAILED_')
         else:
-            print('weekly goals _COMPLETED_')
+            print(f'weekly goals _COMPLETED_')
 
     def show_result(self):
         '''
         Print weekly detailed statistics.
         '''
-        for cat in self.yml:
+        final_result = 0.0
+        for i, cat in enumerate(self.yml):
             stat = self.yml[cat][-1]['stat']
+            final_result += stat
             print(f"{cat} [{stat:.2f}%]:")
             for task in self.yml[cat]:
                 if len(task) > 1:
@@ -65,6 +68,7 @@ class SelfYAML:
                         case _:
                             print(f"{task['task']} {dash} { task['stat']*100:.2f}%")
             print('\n')
+        self._pass_or_fail(final_result, (i+1))
 
 
 
