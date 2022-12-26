@@ -1,4 +1,5 @@
 import yaml
+from pprint import pprint
 
 class SelfYAML:
     def __init__(self, yaml_file):
@@ -19,11 +20,12 @@ class SelfYAML:
         name = task['task']
         dash = (20 - len(name)) * '-'
         result = len(task['status']) / task['times']
-        match result:
-            case 1.0:
-                print(f'{name} {dash}> Done!')
-            case _:
-                print(f'{name} {dash}> {result*100:.2f}% done')
+        return result
+        # match result:
+        #     case 1.0:
+        #         print(f'{name} {dash}> Done!')
+        #     case _:
+        #         print(f'{name} {dash}> {result*100:.2f}%')
 
     def _get_full_stat(self, section):
         '''
@@ -46,17 +48,20 @@ class SelfYAML:
         '''
         Get information about every task.
         '''
-        final_result = 0.0
+        # final_result = 0.0
         for i, section in enumerate(self.yml):
             section_stat = self._get_full_stat(section)
-            final_result += section_stat
-            print(f"{section} [{section_stat:.2f}%]:")
+            # final_result += section_stat
+            # print(f"{section} [{section_stat:.2f}%]:")
             for task in self.yml[section]:
-                self._get_task_info(task)
-            print('\n')
-        self._pass_or_fail(final_result, (i+1))
+                task_stat = self._get_task_info(task)
+                task['stat'] = task_stat
+            self.yml[section].append({'stat': section_stat})
+        return self.yml
+        # self._pass_or_fail(final_result, (i+1))
 
 
 if __name__ == '__main__':
     ya = SelfYAML('self.yaml')
-    ya.show_results()
+    yy = ya.show_results()
+    pprint(yy)
