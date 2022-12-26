@@ -1,5 +1,4 @@
 import yaml
-from pprint import pprint
 
 class SelfYAML:
     def __init__(self, yaml_file):
@@ -18,15 +17,7 @@ class SelfYAML:
         Get information about a task,
         print the result.
         '''
-        name = task['task']
-        dash = (20 - len(name)) * '-'
-        result = len(task['status']) / task['times']
-        return result
-        # match result:
-        #     case 1.0:
-        #         print(f'{name} {dash}> Done!')
-        #     case _:
-        #         print(f'{name} {dash}> {result*100:.2f}%')
+        return len(task['status']) / task['times']
 
     def _get_full_stat(self, section):
         '''
@@ -35,25 +26,23 @@ class SelfYAML:
         sm = 0
         for i, task in enumerate(self.yml[section]):
             sm += len(task['status']) / task['times']
-        # return f"{(sm/(i+1))*100:.2f}%"
         return ((sm/(i+1))*100)
 
     def _add_stats(self):
         '''
         Get information about every task.
         '''
-        # final_result = 0.0
-        for i, section in enumerate(self.yml):
+        for section in self.yml:
             section_stat = self._get_full_stat(section)
-            # final_result += section_stat
-            # print(f"{section} [{section_stat:.2f}%]:")
             for task in self.yml[section]:
                 task_stat = self._get_task_stat(task)
                 task['stat'] = task_stat
             self.yml[section].append({'stat': section_stat})
-        # self._pass_or_fail(final_result, (i+1))
 
     def _pass_or_fail(self, result, classes):
+        '''
+        Determina wether the weekly goals were achieved or not.
+        '''
         pass_or_fail = result/classes
         if pass_or_fail < 80.0:
             print('weekly goals _FAILED_')
@@ -61,6 +50,9 @@ class SelfYAML:
             print('weekly goals _COMPLETED_')
 
     def show_result(self):
+        '''
+        Print weekly detailed statistics.
+        '''
         for cat in self.yml:
             stat = self.yml[cat][-1]['stat']
             print(f"{cat} [{stat:.2f}%]:")
