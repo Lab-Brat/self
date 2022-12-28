@@ -15,7 +15,7 @@ Exercise:
     times: 4
     details:
       - ">= 1h"
-    status: "**"
+    status: "***"
 
 
 Language:
@@ -27,7 +27,7 @@ Language:
 Education:
   - task: "Reading"
     times: 7
-    status: "***"
+    status: "****"
 
   - task: "OpenNebula"
     times: 2
@@ -46,7 +46,7 @@ Organization:
   - task: "Daily Tasks"
     times: 4
     details: "Write down daily tasks for the next workday (except Wednesday)"
-    status: "***"
+    status: "****"
 
   - task: "Growth Plan"
     times: 3
