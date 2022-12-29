@@ -50,6 +50,17 @@ class SelfYAML:
         else:
             print(f'weekly goals _COMPLETED_')
 
+    def _print_task(self, task):
+        '''
+        Print task statistics.
+        '''
+        dash = (20 - len(task['task'])) * '-'
+        match task['stat']:
+            case 1.0:
+                print(f"{task['task']} {dash} Done!")
+            case _:
+                print(f"{task['task']} {dash} { task['stat']*100:.2f}%")
+
     def show_result(self):
         '''
         Print weekly detailed statistics.
@@ -59,17 +70,9 @@ class SelfYAML:
             stat = self.yml[cat][-1]['stat']
             final_result += stat
             print(f"{cat} [{stat:.2f}%]:")
-            for task in self.yml[cat]:
-                if len(task) > 1:
-                    dash = (20 - len(task['task'])) * '-'
-                    match task['stat']:
-                        case 1.0:
-                            print(f"{task['task']} {dash} Done!")
-                        case _:
-                            print(f"{task['task']} {dash} { task['stat']*100:.2f}%")
+            [self._print_task(task) for task in self.yml[cat] if len(task) > 1]
             print('\n')
         self._pass_or_fail(final_result, (i+1))
-
 
 
 if __name__ == '__main__':
