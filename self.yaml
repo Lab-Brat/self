@@ -27,7 +27,7 @@ Language:
 Education:
   - task: "Reading"
     times: 7
-    status: "*****"
+    status: "******"
 
   - task: "OpenNebula"
     times: 2
