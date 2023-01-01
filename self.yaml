@@ -3,7 +3,7 @@
 Exercise:
   - task: "Gym"
     times: 4
-    status: "*"
+    status: ""
 
   - task: "Run"
     times: 1
@@ -15,40 +15,40 @@ Exercise:
     times: 4
     details:
       - ">= 1h"
-    status: "****"
+    status: ""
 
 
 Language:
   - task: "GRE Vocabulary"
     times: 3
-    status: "**"
+    status: ""
 
 
 Education:
   - task: "Reading"
     times: 7
-    status: "*******"
+    status: "*"
 
   - task: "OpenNebula"
     times: 2
     details:
       - ">= 30min"
-    status: "*"
+    status: ""
 
   - task: "Jenkins"
     times: 2
     details:
       - ">= 1h"
-    status: "**"
+    status: ""
 
 
 Organization:
   - task: "Daily Tasks"
     times: 4
     details: "Write down daily tasks for the next workday (except Wednesday)"
-    status: "****"
+    status: ""
 
   - task: "Growth Plan"
     times: 3
     details: "Do things from your growth plan (study/tasks)"
-    status: "***"
+    status: ""
