@@ -12,13 +12,6 @@ class ReadYAML:
         with open(yaml_file, 'r') as file:
             return yaml.safe_load(file)
 
-    def _get_task_stat(self, task):
-        '''
-        Get information about a task,
-        print the result.
-        '''
-        return len(task['status']) / task['times']
-
     def _get_full_stat(self, section):
         '''
         Get completetion rate of the section.
@@ -35,7 +28,7 @@ class ReadYAML:
         for section in self.yml:
             section_stat = self._get_full_stat(section)
             for task in self.yml[section]:
-                task_stat = self._get_task_stat(task)
+                task_stat = len(task['status']) / task['times']
                 task['stat'] = task_stat
             self.yml[section].append({'stat': section_stat})
 
