@@ -1,9 +1,9 @@
 import yaml
+from pprint import pprint
 
-class SelfYAML:
+class ReadYAML:
     def __init__(self, yaml_file):
         self.yml = self._read_yaml(yaml_file)
-        self._add_stats()
     
     def _read_yaml(self, yaml_file):
         '''
@@ -62,10 +62,11 @@ class SelfYAML:
             case _:
                 print(f"{task['task']} {dash} { task['stat']*100:.2f}%")
 
-    def show_result(self):
+    def show_self_result(self):
         '''
         Print weekly detailed statistics.
         '''
+        self._add_stats()
         final_result = 0.0
         for i, cat in enumerate(self.yml):
             stat = self.yml[cat][-1]['stat']
@@ -75,7 +76,9 @@ class SelfYAML:
             print('\n')
         self._pass_or_fail(final_result, (i+1))
 
-
 if __name__ == '__main__':
-    ya = SelfYAML('self.yaml')
-    ya.show_result()
+    se = ReadYAML('self.yaml')
+    se.show_self_result()
+
+    plan = ReadYAML('study_plan.yaml')
+    pprint(plan.yml)
