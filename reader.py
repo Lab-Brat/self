@@ -45,7 +45,7 @@ class SelfYAML:
         '''
         pass_or_fail = result/classes
         pass_bar = 80.0
-        print(f'Weekly score: {pass_or_fail}/100 (passing score: {pass_bar})')
+        print(f'Weekly score: {pass_or_fail:.2f}/100 (passing score: {pass_bar})')
         if pass_or_fail < pass_bar:
             print(f'weekly goals _FAILED_')
         else:
