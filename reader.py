@@ -1,8 +1,10 @@
+import sys
 import yaml
 from pprint import pprint
 
 class ReadYAML:
     def __init__(self, yaml_file):
+        self.file = yaml_file
         self.yml = self._read_yaml(yaml_file)
     
     def _read_yaml(self, yaml_file):
@@ -12,25 +14,41 @@ class ReadYAML:
         with open(yaml_file, 'r') as file:
             return yaml.safe_load(file)
 
-    def _get_full_stat(self, section):
+    def _get_count(self, counts):
         '''
-        Get completetion rate of the section.
+        '''
+        if isinstance(counts, int):
+            section_counts = counts
+        elif isinstance(counts, list):
+            section_counts = len(counts)
+        else:
+            print('Im confused')
+            sys.exit(0)
+        return section_counts
+
+
+    def _get_full_stat(self, block):
+        '''
+        Get completetion rate of the block.
         '''
         sm = 0
-        for i, task in enumerate(self.yml[section]):
-            sm += len(task['status']) / task['times']
+        for i, section in enumerate(self.yml[block]):
+            if self.file == 'self.yaml':
+                section_counts = self._get_count(section['time'])
+            sm += len(section['status']) / section_counts
         return ((sm/(i+1))*100)
 
     def _add_stats(self):
         '''
-        Get information about every task.
+        Get information about every section.
         '''
-        for section in self.yml:
-            section_stat = self._get_full_stat(section)
-            for task in self.yml[section]:
-                task_stat = len(task['status']) / task['times']
-                task['stat'] = task_stat
-            self.yml[section].append({'stat': section_stat})
+        for block in self.yml:
+            section_stat = self._get_full_stat(block)
+            for section in self.yml[block]:
+                task_stat = (len(section['status']) / 
+                             self._get_count(section['time']))
+                section['stat'] = task_stat
+            self.yml[block].append({'stat': section_stat})
 
     def _pass_or_fail(self, result, classes):
         '''
@@ -38,22 +56,22 @@ class ReadYAML:
         '''
         pass_or_fail = result/classes
         pass_bar = 80.0
-        print(f'Weekly score: {pass_or_fail:.2f}/100 (passing score: {pass_bar})')
+        print(f'Weekly score: {pass_or_fail:.2f}/100')
         if pass_or_fail < pass_bar:
             print(f'weekly goals _FAILED_')
         else:
             print(f'weekly goals _COMPLETED_')
 
-    def _print_task(self, task):
+    def _print_task(self, section):
         '''
-        Print task statistics.
+        Print section statistics.
         '''
-        dash = (20 - len(task['task'])) * '-'
-        match task['stat']:
+        dash = (20 - len(section['name'])) * '-'
+        match section['stat']:
             case 1.0:
-                print(f"{task['task']} {dash} Done!")
+                print(f"{section['name']} {dash} Done!")
             case _:
-                print(f"{task['task']} {dash} { task['stat']*100:.2f}%")
+                print(f"{section['name']} {dash} { section['stat']*100:.2f}%")
 
     def show_self_result(self):
         '''
@@ -65,7 +83,7 @@ class ReadYAML:
             stat = self.yml[cat][-1]['stat']
             final_result += stat
             print(f"{cat} [{stat:.2f}%]:")
-            [self._print_task(task) for task in self.yml[cat] if len(task) > 1]
+            [self._print_task(section) for section in self.yml[cat] if len(section) > 1]
             print('\n')
         self._pass_or_fail(final_result, (i+1))
 
@@ -73,5 +91,5 @@ if __name__ == '__main__':
     se = ReadYAML('self.yaml')
     se.show_self_result()
 
-    plan = ReadYAML('study_plan.yaml')
-    pprint(plan.yml)
+    # plan = ReadYAML('study_plan.yaml')
+    # pprint(plan.yml)

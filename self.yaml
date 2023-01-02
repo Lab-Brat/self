@@ -1,54 +1,59 @@
 # self v0.3.2
 ---
 Exercise:
-  - task: "Gym"
-    times: 4
+  - name: "Gym"
+    time:
+      - "Monday"
+      - "Tuesday"
+      - "Thursday"
+      - "Friday"
     status: ""
 
-  - task: "Run"
-    times: 1
-    details:
-      - "Outdoors >= 10km"
+  - name: "Run"
+    time:
+      - "Sunday"
+    details: "Outdoors >= 10km"
     status: "*"
 
-  - task: "Walk"
-    times: 4
-    details:
-      - ">= 1h"
+  - name: "Walk"
+    time: 4
+    details: ">= 1h"
     status: ""
 
 
 Language:
-  - task: "GRE Vocabulary"
-    times: 3
+  - name: "GRE Vocabulary"
+    time: 3
     status: ""
 
 
 Education:
-  - task: "Reading"
-    times: 7
+  - name: "Reading"
+    time: 7
     status: "*"
 
-  - task: "OpenNebula"
-    times: 2
-    details:
-      - ">= 30min"
+  - name: "OpenNebula"
+    time: 2
+    details: ">= 30min"
     status: ""
 
-  - task: "Jenkins"
-    times: 2
-    details:
-      - ">= 1h"
+  - name: "Jenkins"
+    time: 2
+    details: ">= 1h"
     status: ""
 
 
 Organization:
-  - task: "Daily Tasks"
-    times: 4
-    details: "Write down daily tasks for the next workday (except Wednesday)"
+  - name: "Daily Tasks"
+    time:
+      - "Sunday"
+      - "Monday"
+      - "Wednesday"
+      - "Thursday"
+    details: "Write down daily tasks for the next workday"
     status: ""
 
-  - task: "Growth Plan"
-    times: 3
+  - name: "Growth Plan"
+    time: 3
     details: "Do things from your growth plan (study/tasks)"
     status: ""
