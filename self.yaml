@@ -7,7 +7,7 @@ Exercise:
       - "Tuesday"
       - "Thursday"
       - "Friday"
-    status: ""
+    status: "*"
 
   - name: "Run"
     time:
@@ -18,7 +18,7 @@ Exercise:
   - name: "Walk"
     time: 4
     details: ">= 1h"
-    status: ""
+    status: "*"
 
 
 Language:
@@ -30,7 +30,7 @@ Language:
 Education:
   - name: "Reading"
     time: 7
-    status: "*"
+    status: "**"
 
   - name: "OpenNebula"
     time: 2
@@ -42,6 +42,11 @@ Education:
     details: ">= 1h"
     status: ""
 
+  - name: "Monthly Tech"
+    time: 3
+    details: "Python, >=1h"
+    status: "*"
+
 
 Organization:
   - name: "Daily Tasks"
@@ -51,7 +56,7 @@ Organization:
       - "Wednesday"
       - "Thursday"
     details: "Write down daily tasks for the next workday"
-    status: ""
+    status: "__"
 
   - name: "Growth Plan"
     time: 3
