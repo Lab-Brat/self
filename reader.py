@@ -1,12 +1,15 @@
 import sys
 import yaml
-from pprint import pprint
 
 class ReadYAML:
     def __init__(self, yaml_file):
         self.file = yaml_file
         self.yml = self._read_yaml(yaml_file)
-    
+
+        # file vars
+        self.count = 'time' if yaml_file == 'self.yaml' else 'details'
+        self.gls = 'weekly' if self.file == 'self.yaml' else 'monthly study'
+
     def _read_yaml(self, yaml_file):
         '''
         Read self.yaml, return a dictionary
@@ -48,10 +51,7 @@ class ReadYAML:
         for block in self.yml:
             section_stat = self._get_full_stat(block)
             for section in self.yml[block]:
-                if self.file == 'self.yaml':
-                    count = self._get_count(section['time'])
-                elif self.file == 'study_plan.yaml':
-                    count = self._get_count(section['details'])
+                count = self._get_count(section[self.count])
                 task_stat = (len(section['status']) / count)
                 section['stat'] = task_stat
             self.yml[block].append({'stat': section_stat})
@@ -62,11 +62,12 @@ class ReadYAML:
         '''
         pass_or_fail = result/classes
         pass_bar = 80.0
-        print(f'Weekly score: {pass_or_fail:.2f}/100')
+        print(f'{self.gls} score: {pass_or_fail:.2f}/100')
         if pass_or_fail < pass_bar:
-            print(f'weekly goals _FAILED_')
+            print(f'{self.gls} goals: _FAILED_')
         else:
-            print(f'weekly goals _COMPLETED_')
+            print(f'{self.gls} goals: _COMPLETED_')
+        print(f'{"-"*34}\n')
 
     def _print_task(self, section):
         '''
@@ -79,7 +80,7 @@ class ReadYAML:
             case _:
                 print(f"{section['name']} {dash} { section['stat']*100:.2f}%")
 
-    def show_self_result(self):
+    def show_result(self):
         '''
         Print weekly detailed statistics.
         '''
@@ -94,8 +95,8 @@ class ReadYAML:
         self._pass_or_fail(final_result, (i+1))
 
 if __name__ == '__main__':
-    # se = ReadYAML('self.yaml')
-    # se.show_self_result()
+    se = ReadYAML('self.yaml')
+    se.show_result()
 
     plan = ReadYAML('study_plan.yaml')
-    plan.show_self_result()
+    plan.show_result()
