@@ -1,29 +1,29 @@
 ---
 Python:
-  - resource: 'Learning Python 5ed'
-    date: 'Jan2023'
+  - name: "Learning Python 5ed"
+    time: "Jan2023"
     details:
-      - 'Chapter 14'
-      - 'Chapter 19'
-      - 'Chapter 20'
-    status: ''
+      - "Chapter 14"
+      - "Chapter 19"
+      - "Chapter 20"
+    status: ""
 
 Nginx:
-  - resource: 'Nginx Deep Dive ACG course'
-    dates: 'Dec2022'
+  - name: "Nginx Deep Dive ACG course"
+    time: "Dec2022"
     details:
-      - 'Chapter 1'
-      - 'Chapter 2'
-      - 'Chapter 3'
-      - 'Chapter 4'
-      - 'Chapter 5'
-      - 'Chapter 6'
-    status: '******'
+      - "Chapter 1"
+      - "Chapter 2"
+      - "Chapter 3"
+      - "Chapter 4"
+      - "Chapter 5"
+      - "Chapter 6"
+    status: "******"
 
-  - resource: 'Nginx Deep Dive ACG course'
-    date: 'Jan2023' 
+  - name: "Nginx Deep Dive ACG course"
+    time: "Jan2023" 
     details:
-      - 'Chapter 7'
-      - 'Chapter 8'
-      - 'Chapter 9'
-    status: ''
+      - "Chapter 7"
+      - "Chapter 8"
+      - "Chapter 9"
+    status: ""

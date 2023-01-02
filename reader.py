@@ -17,15 +17,16 @@ class ReadYAML:
     def _get_count(self, counts):
         '''
         '''
-        if isinstance(counts, int):
-            section_counts = counts
-        elif isinstance(counts, list):
-            section_counts = len(counts)
-        else:
-            print('Im confused')
-            sys.exit(0)
-        return section_counts
-
+        if self.file == 'self.yaml':
+            if isinstance(counts, int):
+                return counts
+            elif isinstance(counts, list):
+                return len(counts)
+            else:
+                print('Im confused')
+                sys.exit(0)
+        elif self.file == 'study_plan.yaml':
+            return len(counts)
 
     def _get_full_stat(self, block):
         '''
@@ -35,6 +36,8 @@ class ReadYAML:
         for i, section in enumerate(self.yml[block]):
             if self.file == 'self.yaml':
                 section_counts = self._get_count(section['time'])
+            elif self.file == 'study_plan.yaml':
+                section_counts = len(section['details'])
             sm += len(section['status']) / section_counts
         return ((sm/(i+1))*100)
 
@@ -45,8 +48,11 @@ class ReadYAML:
         for block in self.yml:
             section_stat = self._get_full_stat(block)
             for section in self.yml[block]:
-                task_stat = (len(section['status']) / 
-                             self._get_count(section['time']))
+                if self.file == 'self.yaml':
+                    count = self._get_count(section['time'])
+                elif self.file == 'study_plan.yaml':
+                    count = self._get_count(section['details'])
+                task_stat = (len(section['status']) / count)
                 section['stat'] = task_stat
             self.yml[block].append({'stat': section_stat})
 
@@ -88,8 +94,8 @@ class ReadYAML:
         self._pass_or_fail(final_result, (i+1))
 
 if __name__ == '__main__':
-    se = ReadYAML('self.yaml')
-    se.show_self_result()
+    # se = ReadYAML('self.yaml')
+    # se.show_self_result()
 
-    # plan = ReadYAML('study_plan.yaml')
-    # pprint(plan.yml)
+    plan = ReadYAML('study_plan.yaml')
+    plan.show_self_result()
