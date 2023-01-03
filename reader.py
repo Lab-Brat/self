@@ -1,12 +1,12 @@
 import sys
 import yaml
-from datetime import datetime
 from pprint import pprint
 
 class ReadYAML:
     def __init__(self, yaml_file):
         self.file = yaml_file
-        self.yml = self._read_yaml(yaml_file)
+        self.yml  = self._read_yaml(yaml_file)
+        self.stat_dict = dict()
 
         # file vars
         self.count = 'time' if yaml_file == 'self.yaml' else 'details'
@@ -48,12 +48,10 @@ class ReadYAML:
         Get information about every section.
         '''
         for block in self.yml:
-            block_stat = self._get_full_stat(block)
+            self.stat_dict[block] = self._get_full_stat(block)
             for section in self.yml[block]:
                 count = self._get_count(section[self.count])
-                section_stat = (len(section['status']) / count)
-                section['stat'] = section_stat
-            self.yml[block].append({'stat': block_stat})
+                self.stat_dict[section['name']] = len(section['status'])/count
 
     def _pass_or_fail(self, result, classes):
         '''
@@ -73,11 +71,12 @@ class ReadYAML:
         Print section statistics.
         '''
         dash = (30 - len(section['name'])) * '-'
-        match section['stat']:
+        stat = self.stat_dict[section['name']]
+        match stat:
             case 1.0:
                 print(f"{section['name']} {dash} Done!")
             case _:
-                print(f"{section['name']} {dash} { section['stat']*100:.2f}%")
+                print(f"{section['name']} {dash} { stat*100:.2f}%")
 
     def show_result(self):
         '''
@@ -87,7 +86,7 @@ class ReadYAML:
         final_result = 0.0
 
         for i, cat in enumerate(self.yml):
-            stat = self.yml[cat][-1]['stat']
+            stat = self.stat_dict[cat]
             final_result += stat
             print(f"{cat} [{stat:.2f}%]:")
             [self._print_section(section) for section in self.yml[cat] if len(section) > 1]
