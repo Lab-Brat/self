@@ -48,13 +48,12 @@ class ReadYAML:
         Get information about every section.
         '''
         for block in self.yml:
-            section_stat = self._get_full_stat(block)
-            # print(section_stat)
+            block_stat = self._get_full_stat(block)
             for section in self.yml[block]:
                 count = self._get_count(section[self.count])
                 section_stat = (len(section['status']) / count)
                 section['stat'] = section_stat
-            self.yml[block].append({'stat': section_stat})
+            self.yml[block].append({'stat': block_stat})
 
     def _pass_or_fail(self, result, classes):
         '''
@@ -80,14 +79,14 @@ class ReadYAML:
             case _:
                 print(f"{section['name']} {dash} { section['stat']*100:.2f}%")
 
-    def _filter_and_print(self, block):
-        cm = datetime.now().strftime('%b%Y')
-        for section in block[0:-1]:
-            if self.file == 'self.yaml':
-                self._print_section(section)
-            if self.file == 'study_plan.yaml' and section['time'] == cm:
-                self._print_section(section)
-        print('\n')
+    # def _filter_and_print(self, block):
+    #     cm = datetime.now().strftime('%b%Y')
+    #     for section in block[0:-1]:
+    #         if self.file == 'self.yaml':
+    #             self._print_section(section)
+    #         if self.file == 'study_plan.yaml' and section['time'] == cm:
+    #             self._print_section(section)
+    #     print('\n')
 
     def show_result(self):
         '''
@@ -101,7 +100,7 @@ class ReadYAML:
             final_result += stat
             print(f"{cat} [{stat:.2f}%]:")
             [self._print_section(section) for section in self.yml[cat] if len(section) > 1]
-            # self._filter_and_print(self.yml[cat])
+            print('')
         self._pass_or_fail(final_result, (i+1))
 
 
