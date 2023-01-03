@@ -14,13 +14,15 @@ class ReadYAML:
 
     def _read_yaml(self, yaml_file):
         '''
-        Read self.yaml, return a dictionary
+        Read self.yaml, return a dictionary.
         '''
         with open(yaml_file, 'r') as file:
             return yaml.safe_load(file)
 
     def _get_count(self, counts):
         '''
+        For each file, get file-specific countable parameters,
+        i.e time parameter self, and details parameter in study_plan.
         '''
         if self.file == 'self.yaml':
             if isinstance(counts, int):
@@ -35,7 +37,7 @@ class ReadYAML:
 
     def _add_stats(self):
         '''
-        get statistics for the whole block, then
+        Get statistics for the whole block, then
         get statistics for each section in the block.
         Save everyting to stat_dict, 
         format: {<block/section name>: <stats>}
@@ -45,14 +47,14 @@ class ReadYAML:
             for i, section in enumerate(self.yml[block]):
                 section_stat = (len(section['status']) /
                                 self._get_count(section[self.count]))
-                # add section statistics to stat_dict
                 self.stat_dict[section['name']] = section_stat
                 sm += section_stat
             self.stat_dict[block] = (sm/(i+1))*100
 
     def _pass_or_fail(self, result, classes):
         '''
-        Determina wether the weekly goals were achieved or not.
+        Determine whether the weekly goals were achieved or not.
+        Print out the final score, and the result message.
         '''
         pass_or_fail = result/classes
         pass_bar = 80.0
@@ -65,7 +67,7 @@ class ReadYAML:
 
     def _print_section(self, section):
         '''
-        Print section statistics.
+        Print individual section with detailed statistics.
         '''
         dash = (30 - len(section['name'])) * '-'
         stat = self.stat_dict[section['name']]
@@ -77,7 +79,8 @@ class ReadYAML:
 
     def show_result(self):
         '''
-        Print weekly detailed statistics.
+        Calculate statistics for blocks and all sections with _add_stats.
+        Output detailed statistics for the document and the final result.
         '''
         self._add_stats()
         final_result = 0.0
