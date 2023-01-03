@@ -33,25 +33,22 @@ class ReadYAML:
         elif self.file == 'study_plan.yaml':
             return len(counts)
 
-    def _get_full_stat(self, block):
-        '''
-        Get completetion rate of the block.
-        '''
-        sm = 0
-        for i, section in enumerate(self.yml[block]):
-            section_counts = self._get_count(section[self.count])
-            sm += len(section['status']) / section_counts
-        return ((sm/(i+1))*100)
-
     def _add_stats(self):
         '''
-        Get information about every section.
+        get statistics for the whole block, then
+        get statistics for each section in the block.
+        Save everyting to stat_dict, 
+        format: {<block/section name>: <stats>}
         '''
         for block in self.yml:
-            self.stat_dict[block] = self._get_full_stat(block)
-            for section in self.yml[block]:
-                count = self._get_count(section[self.count])
-                self.stat_dict[section['name']] = len(section['status'])/count
+            sm = 0
+            for i, section in enumerate(self.yml[block]):
+                section_stat = (len(section['status']) /
+                                self._get_count(section[self.count]))
+                # add section statistics to stat_dict
+                self.stat_dict[section['name']] = section_stat
+                sm += section_stat
+            self.stat_dict[block] = (sm/(i+1))*100
 
     def _pass_or_fail(self, result, classes):
         '''
