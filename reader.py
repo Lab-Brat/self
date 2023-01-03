@@ -1,5 +1,7 @@
 import sys
 import yaml
+from datetime import datetime
+from pprint import pprint
 
 class ReadYAML:
     def __init__(self, yaml_file):
@@ -37,10 +39,7 @@ class ReadYAML:
         '''
         sm = 0
         for i, section in enumerate(self.yml[block]):
-            if self.file == 'self.yaml':
-                section_counts = self._get_count(section['time'])
-            elif self.file == 'study_plan.yaml':
-                section_counts = len(section['details'])
+            section_counts = self._get_count(section[self.count])
             sm += len(section['status']) / section_counts
         return ((sm/(i+1))*100)
 
@@ -50,10 +49,11 @@ class ReadYAML:
         '''
         for block in self.yml:
             section_stat = self._get_full_stat(block)
+            # print(section_stat)
             for section in self.yml[block]:
                 count = self._get_count(section[self.count])
-                task_stat = (len(section['status']) / count)
-                section['stat'] = task_stat
+                section_stat = (len(section['status']) / count)
+                section['stat'] = section_stat
             self.yml[block].append({'stat': section_stat})
 
     def _pass_or_fail(self, result, classes):
@@ -67,18 +67,27 @@ class ReadYAML:
             print(f'{self.gls} goals: _FAILED_')
         else:
             print(f'{self.gls} goals: _COMPLETED_')
-        print(f'{"-"*34}\n')
+        print(f'{"-"*40}\n')
 
-    def _print_task(self, section):
+    def _print_section(self, section):
         '''
         Print section statistics.
         '''
-        dash = (20 - len(section['name'])) * '-'
+        dash = (30 - len(section['name'])) * '-'
         match section['stat']:
             case 1.0:
                 print(f"{section['name']} {dash} Done!")
             case _:
                 print(f"{section['name']} {dash} { section['stat']*100:.2f}%")
+
+    def _filter_and_print(self, block):
+        cm = datetime.now().strftime('%b%Y')
+        for section in block[0:-1]:
+            if self.file == 'self.yaml':
+                self._print_section(section)
+            if self.file == 'study_plan.yaml' and section['time'] == cm:
+                self._print_section(section)
+        print('\n')
 
     def show_result(self):
         '''
@@ -86,13 +95,15 @@ class ReadYAML:
         '''
         self._add_stats()
         final_result = 0.0
+
         for i, cat in enumerate(self.yml):
             stat = self.yml[cat][-1]['stat']
             final_result += stat
             print(f"{cat} [{stat:.2f}%]:")
-            [self._print_task(section) for section in self.yml[cat] if len(section) > 1]
-            print('\n')
+            [self._print_section(section) for section in self.yml[cat] if len(section) > 1]
+            # self._filter_and_print(self.yml[cat])
         self._pass_or_fail(final_result, (i+1))
+
 
 if __name__ == '__main__':
     se = ReadYAML('self.yaml')
