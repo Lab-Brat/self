@@ -79,15 +79,6 @@ class ReadYAML:
             case _:
                 print(f"{section['name']} {dash} { section['stat']*100:.2f}%")
 
-    # def _filter_and_print(self, block):
-    #     cm = datetime.now().strftime('%b%Y')
-    #     for section in block[0:-1]:
-    #         if self.file == 'self.yaml':
-    #             self._print_section(section)
-    #         if self.file == 'study_plan.yaml' and section['time'] == cm:
-    #             self._print_section(section)
-    #     print('\n')
-
     def show_result(self):
         '''
         Print weekly detailed statistics.

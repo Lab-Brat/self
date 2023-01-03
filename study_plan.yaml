@@ -1,3 +1,4 @@
+# study plan for January 2023
 ---
 Python:
   - name: "Learning Python 5ed"
@@ -6,20 +7,16 @@ Python:
       - "Chapter 14"
       - "Chapter 19"
       - "Chapter 20"
+      - "Chapter 26"
+      - "Chapter 27"
+      - "Chapter 28"
+      - "Chapter 29"
+      - "Chapter 30"
+      - "Chapter 31"
+      - "Chapter 32"
     status: ""
 
 Nginx:
-  - name: "Nginx Deep Dive ACG course"
-    time: "Dec2022"
-    details:
-      - "Chapter 1"
-      - "Chapter 2"
-      - "Chapter 3"
-      - "Chapter 4"
-      - "Chapter 5"
-      - "Chapter 6"
-    status: "******"
-
   - name: "Nginx Deep Dive ACG course"
     time: "Jan2023" 
     details:
