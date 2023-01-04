@@ -30,12 +30,12 @@ Language:
 Education:
   - name: "Reading"
     time: 7
-    status: "***"
+    status: "****"
 
   - name: "OpenNebula"
     time: 2
     details: ">= 30min"
-    status: ""
+    status: "*"
 
   - name: "Jenkins"
     time: 2
@@ -56,7 +56,7 @@ Organization:
       - "Wednesday"
       - "Thursday"
     details: "Write down daily tasks for the next workday"
-    status: "__"
+    status: "__*"
 
   - name: "Growth Plan"
     time: 3
