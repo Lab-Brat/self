@@ -35,6 +35,22 @@ class ReadYAML:
         elif self.file == 'study_plan.yaml':
             return len(counts)
 
+    def _read_seciton_stat(self, section_stat):
+        '''
+        Read 'stat' parameter string of the section,
+        parse * ^ _ @ symbols to determine the completion integer.
+        '''
+        stat_all = 0
+        for char in section_stat:
+            match char:
+                case '*' | '^':
+                    stat_all += 1
+                case '_' | '@':
+                    stat_all += 0
+                case _:
+                    continue
+        return stat_all
+
     def _add_stats(self):
         '''
         Get statistics for the whole block, then
@@ -45,7 +61,7 @@ class ReadYAML:
         for block in self.yml:
             sm = 0
             for i, section in enumerate(self.yml[block]):
-                section_stat = (len(section['status']) /
+                section_stat = (self._read_seciton_stat(section['status']) /
                                 self._get_count(section[self.count]))
                 self.stat_dict[section['name']] = section_stat
                 sm += section_stat
