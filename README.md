@@ -1,34 +1,45 @@
 ### self
 Experimental repository to test out efficiency of 
-using a version control system on self improvement planning.  
+using a version control system for self improvement.  
 
 #### Idea
-Main idea is to create a config file with a set of small achievements that 
-has to be completed in a period of time (2 weeks) and binded to a tag (0.0.1).  
-For example:
+Define a yaml file with weekly goals using the following template:
+```yaml
+# self v0.4.0
+# status memo
+# * --> task complete
+# @ --> current task
+# _ --> task incomplete
+#       used for tasks with planned days
+# ^ --> task skipped, but marked complete
+#       for example skip task on vacation,
+#       or completed on the day different from the plan
+Exercise:
+  - name: "Gym"
+    time:
+      - "Monday"
+      - "Tuesday"
+      - "Thursday"
+      - "Friday"
+    status: "_**_"
+
+Education:
+  - name: "Reading"
+    time: 7
+    status: "_******"
+
+  - name: "Python"
+    time: 2
+    details: ">= 1h"
+    status: "^*"
 ```
-# self 0.0.1
-[Exercise]
-* Go to the gym >=2 a week
-  Status: []
-* Run at >=2 a week > 10 min
-  Status: []
+If the plan above will be completed 2 weeks straight (or any other subjective time period), 
+then the version can be upgraded from v0.4.0 to v0.4.1 and settings can be tweaked a little.
 
-[Reading]
-* Read at >=30 min per day
-  Status: []
-
-[Studying]
-* Study Dr. Chucks C course >=1 hour every workday
-  Status: []
-```
-If the plan above will be completed 2 weeks straight, 
-then it can be upgraded from version 0.0.1 to 0.0.2 and settings can be modified.
-
-
-#### Creating a tag
-Create and push a tag:
-```
+When it's done, just push a new version (tag) to the repository, 
+clear the configuration file and do it all again!
+To push a tag:
+```bash
 git tag -a v0.1.1 -m 'brief description of an upgrade'
 git push origin v0.1.1
 ```
