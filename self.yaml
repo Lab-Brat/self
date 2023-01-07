@@ -15,45 +15,45 @@ Exercise:
       - "Tuesday"
       - "Thursday"
       - "Friday"
-    status: "***_"
+    status: ""
 
   - name: "Run"
     time:
       - "Sunday"
     details: "Outdoors >= 10km"
-    status: "*"
+    status: ""
 
   - name: "Walk"
     time: 4
     details: ">= 1h"
-    status: "***_"
+    status: ""
 
 
 Language:
   - name: "GRE Vocabulary"
     time: 3
-    status: "*__"
+    status: ""
 
 
 Education:
   - name: "Reading"
     time: 7
-    status: "*******"
+    status: ""
 
   - name: "OpenNebula"
     time: 2
     details: ">= 30min"
-    status: "*_"
+    status: ""
 
   - name: "Jenkins"
     time: 2
     details: ">= 1h"
-    status: "**"
+    status: ""
 
   - name: "Monthly Tech"
     time: 3
     details: "Python, >=1h"
-    status: "***"
+    status: ""
 
 
 Organization:
@@ -64,9 +64,9 @@ Organization:
       - "Wednesday"
       - "Thursday"
     details: "Write down daily tasks for the next workday"
-    status: "^^**"
+    status: ""
 
   - name: "Growth Plan"
     time: 3
     details: "Do things from your growth plan (study/tasks)"
-    status: "**_"
+    status: ""
