@@ -22,7 +22,7 @@ Python:
       - "Chapter 30"
       - "Chapter 31"
       - "Chapter 32"
-    status: "_*@_______"
+    status: "_*@"
 
 Nginx:
   - name: "Nginx Deep Dive ACG course"
@@ -31,4 +31,4 @@ Nginx:
       - "Chapter 7"
       - "Chapter 8"
       - "Chapter 9"
-    status: "*@_"
+    status: "*@"
