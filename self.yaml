@@ -26,7 +26,7 @@ Exercise:
   - name: "Walk"
     time: 4
     details: ">= 1h"
-    status: ""
+    status: "*"
 
 
 Language:
@@ -38,7 +38,7 @@ Language:
 Education:
   - name: "Reading"
     time: 7
-    status: "**"
+    status: "***"
 
   - name: "OpenNebula"
     time: 2
@@ -53,7 +53,7 @@ Education:
   - name: "Monthly Tech"
     time: 3
     details: "Python, >=1h"
-    status: "*"
+    status: "**"
 
 
 Organization:
@@ -69,4 +69,4 @@ Organization:
   - name: "Growth Plan"
     time: 3
     details: "Do things from your growth plan (study/tasks)"
-    status: ""
+    status: "*"
