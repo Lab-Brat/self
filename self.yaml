@@ -15,7 +15,7 @@ Exercise:
       - "Tuesday"
       - "Thursday"
       - "Friday"
-    status: "*__"
+    status: "*___"
 
   - name: "Run"
     time:
