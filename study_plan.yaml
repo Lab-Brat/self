@@ -15,13 +15,7 @@ Python:
       - "Chapter 14"
       - "Chapter 19"
       - "Chapter 20"
-      - "Chapter 26"
-      - "Chapter 27"
-      - "Chapter 28"
-      - "Chapter 29"
-      - "Chapter 30"
-      - "Chapter 31"
-      - "Chapter 32"
+      - "Chapter 24"
     status: "**@"
 
 Nginx:
@@ -34,6 +28,7 @@ Nginx:
 
 Networkin:
   - name: "Linux Networking ACG course"
+    time: "Jan2023" 
     details:
       - 'Chapter 4'
       - 'Chapter 5'
