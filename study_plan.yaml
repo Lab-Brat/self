@@ -30,5 +30,12 @@ Nginx:
     details:
       - "Chapter 7"
       - "Chapter 8"
-      - "Chapter 9"
-    status: "*@"
+    status: "**"
+
+Networkin:
+  - name: "Linux Networking ACG course"
+    details:
+      - 'Chapter 4'
+      - 'Chapter 5'
+      - 'Chapter 6'
+    status: '@'
