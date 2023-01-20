@@ -38,7 +38,7 @@ Language:
 Education:
   - name: "Reading"
     time: 7
-    status: "****"
+    status: "*****"
 
   - name: "OpenNebula"
     time: 2
