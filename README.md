@@ -48,6 +48,9 @@ python -m install -r requirements.txt
 python reader.py
 ```
 
+Additionally, there is an option to read and print the a study plan. 
+To veriry it's completion rate, use `--study-plan` or `--all` flags with `reader.py`.
+
 When the goals are reached, just push a new version (tag) to the repository, 
 clear the configuration file and do it all again!
 To push a tag:
