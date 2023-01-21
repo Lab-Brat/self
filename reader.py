@@ -112,7 +112,14 @@ class ReadYAML:
 
 if __name__ == '__main__':
     se = ReadYAML('self.yaml')
-    se.show_result()
-
     plan = ReadYAML('study_plan.yaml')
-    plan.show_result()
+    try:
+        if len(sys.argv) == 1: se.show_result()
+        elif sys.argv[1] == '--study-plan': plan.show_result()
+        elif sys.argv[1] == '--all':
+            se.show_result()
+            plan.show_result()
+        else:
+            print("I don't understand the input :(")
+    except:
+        pass
