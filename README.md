@@ -34,9 +34,21 @@ Education:
     status: "^*"
 ```
 If the plan above will be completed 2 weeks straight (or any other subjective time period), 
-then the version can be upgraded from v0.4.0 to v0.4.1 and settings can be tweaked a little.
+then the version can be upgraded from v0.4.0 to v0.4.1 and settings can be tweaked a little.  
 
-When it's done, just push a new version (tag) to the repository, 
+The completion rate can  be verified with `reader.py`:
+```bash
+# install dependencies
+python -m venv venv
+source venv/bin/activate
+python -m install pip --upgrade
+python -m install -r requirements.txt
+
+# run script
+python reader.py
+```
+
+When the goals are reached, just push a new version (tag) to the repository, 
 clear the configuration file and do it all again!
 To push a tag:
 ```bash
