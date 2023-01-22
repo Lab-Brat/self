@@ -20,8 +20,8 @@ Exercise:
   - name: "Run"
     time:
       - "Sunday"
-    details: "Outdoors >= 10km"
-    status: ""
+    details: "Outdoors ~= 10km"
+    status: "*"
 
   - name: "Walk"
     time: 4
@@ -32,7 +32,7 @@ Exercise:
 Language:
   - name: "GRE Vocabulary"
     time: 3
-    status: ""
+    status: "*"
 
 
 Education:
@@ -64,7 +64,7 @@ Organization:
       - "Wednesday"
       - "Thursday"
     details: "Write down daily tasks for the next workday"
-    status: ""
+    status: "*"
 
   - name: "Growth Plan"
     time: 3
