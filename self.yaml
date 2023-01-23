@@ -15,7 +15,7 @@ Exercise:
       - "Tuesday"
       - "Thursday"
       - "Friday"
-    status: ""
+    status: "*"
 
   - name: "Run"
     time:
@@ -26,19 +26,19 @@ Exercise:
   - name: "Walk"
     time: 4
     details: ">= 1h"
-    status: ""
+    status: "*"
 
 
 Language:
   - name: "GRE Vocabulary"
     time: 3
-    status: "*"
+    status: "**"
 
 
 Education:
   - name: "Reading"
     time: 6
-    status: ""
+    status: "*"
 
   - name: "Jenkins"
     time: 1
@@ -64,7 +64,7 @@ Organization:
       - "Wednesday"
       - "Thursday"
     details: "Write down daily tasks for the next workday"
-    status: "*"
+    status: "**"
 
   - name: "Growth Plan"
     time: 3
