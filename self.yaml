@@ -15,7 +15,7 @@ Exercise:
       - "Tuesday"
       - "Thursday"
       - "Friday"
-    status: "*"
+    status: "*_"
 
   - name: "Run"
     time:
@@ -69,4 +69,4 @@ Organization:
   - name: "Growth Plan"
     time: 3
     details: "Do things from your growth plan (study/tasks)"
-    status: ""
+    status: "*"
