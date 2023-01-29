@@ -26,7 +26,7 @@ Nginx:
       - "Chapter 8"
     status: "**"
 
-Networkin:
+Networking:
   - name: "Linux Networking ACG course"
     time: "Jan2023" 
     details:
@@ -34,3 +34,9 @@ Networkin:
       - 'Chapter 5'
       - 'Chapter 6'
     status: '@'
+
+Gentoo:
+  - name: "Study Gentoo Linux"
+    time: "Jan2023"
+    details:
+      - 'Install Gentoo on  VirtualBox VM'

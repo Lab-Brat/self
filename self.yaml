@@ -21,7 +21,7 @@ Exercise:
     time:
       - "Sunday"
     details: "Outdoors ~= 10km"
-    status: ""
+    status: "_"
 
   - name: "Walk"
     time: 4
@@ -32,7 +32,7 @@ Exercise:
 Language:
   - name: "GRE Vocabulary"
     time: 3
-    status: ""
+    status: "*"
 
 
 Education:
@@ -40,20 +40,15 @@ Education:
     time: 6
     status: ""
 
-  - name: "Jenkins"
-    time: 1
-    details: ">= 1h"
-    status: ""
-
   - name: "Python"
     time: 2
     details: ">= 1h"
     status: ""
 
-  - name: "Linux Networking"
+  - name: "Linux"
     time: 2
     details: ">= 1h"
-    status: ""
+    status: "*"
 
 
 Organization:
@@ -64,7 +59,7 @@ Organization:
       - "Wednesday"
       - "Thursday"
     details: "Write down daily tasks for the next workday"
-    status: ""
+    status: "*"
 
   - name: "Growth Plan"
     time: 3
