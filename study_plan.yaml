@@ -1,4 +1,4 @@
-# study plan for January 2023
+# study plan for February 2023
 # status memo
 # * --> task complete
 # @ --> current task
@@ -10,33 +10,15 @@
 ---
 Python:
   - name: "Learning Python 5ed"
-    time: "Jan2023"
+    time: "Feb2023"
     details:
-      - "Chapter 14"
-      - "Chapter 19"
       - "Chapter 20"
       - "Chapter 24"
-    status: "**@"
-
-Nginx:
-  - name: "Nginx Deep Dive ACG course"
-    time: "Jan2023" 
-    details:
-      - "Chapter 7"
-      - "Chapter 8"
-    status: "**"
-
-Networking:
-  - name: "Linux Networking ACG course"
-    time: "Jan2023" 
-    details:
-      - 'Chapter 4'
-      - 'Chapter 5'
-      - 'Chapter 6'
-    status: '@'
+    status: "@"
 
 Gentoo:
   - name: "Study Gentoo Linux"
-    time: "Jan2023"
+    time: "Feb2023"
     details:
       - 'Install Gentoo on  VirtualBox VM'
+    status: "@"
