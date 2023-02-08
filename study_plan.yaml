@@ -20,5 +20,6 @@ Gentoo:
   - name: "Study Gentoo Linux"
     time: "Feb2023"
     details:
-      - 'Install Gentoo on  VirtualBox VM'
-    status: "@"
+      - 'Install Gentoo on VirtualBox VM'
+      - 'Grasp Basic Portage Usage'
+    status: "*@"
