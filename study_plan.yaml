@@ -22,4 +22,13 @@ Gentoo:
     details:
       - 'Install Gentoo on VirtualBox VM'
       - 'Grasp Basic Portage Usage'
-    status: "*@"
+    status: "**"
+
+Website:
+  - name: "Build a Personal Website"
+    time: "Feb2023"
+    details:
+      - "But domain names"
+      - "Learn Hugo Basics"
+      - "Create a Github pages website"
+    status: ""
