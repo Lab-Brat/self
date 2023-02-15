@@ -30,5 +30,6 @@ Website:
     details:
       - "But domain names"
       - "Learn Hugo Basics"
-      - "Create a Github pages website"
-    status: ""
+      - "Create a website"
+      - "Self host a website"
+    status: "*@"
