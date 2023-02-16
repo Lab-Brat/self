@@ -15,7 +15,7 @@ Exercise:
       - "Tuesday"
       - "Thursday"
       - "Friday"
-    status: "^*"
+    status: "^*_"
 
   - name: "Run"
     time:
@@ -38,7 +38,7 @@ Language:
 Education:
   - name: "Reading"
     time: 6
-    status: "****"
+    status: "*****"
 
   - name: "Python"
     time: 2
@@ -48,7 +48,7 @@ Education:
   - name: "Linux"
     time: 2
     details: ">= 1h"
-    status: "*"
+    status: "**"
 
 
 Organization:
@@ -59,7 +59,7 @@ Organization:
       - "Wednesday"
       - "Thursday"
     details: "Write down daily tasks for the next workday"
-    status: "***"
+    status: "****"
 
   - name: "Growth Plan"
     time: 3
