@@ -28,8 +28,9 @@ Website:
   - name: "Build a Personal Website"
     time: "Feb2023"
     details:
-      - "But domain names"
+      - "Buy domain names"
+      - "Buy and deploy a VPS"
       - "Learn Hugo Basics"
       - "Create a website"
       - "Self host a website"
-    status: "*@"
+    status: "**@"
