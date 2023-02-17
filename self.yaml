@@ -26,7 +26,7 @@ Exercise:
   - name: "Walk"
     time: 4
     details: ">= 1h"
-    status: "**"
+    status: "***"
 
 
 Language:
@@ -38,7 +38,7 @@ Language:
 Education:
   - name: "Reading"
     time: 6
-    status: "*****"
+    status: "******"
 
   - name: "Python"
     time: 2
@@ -64,4 +64,4 @@ Organization:
   - name: "Growth Plan"
     time: 3
     details: "Do things from your growth plan (study/tasks)"
-    status: ""
+    status: "*"
