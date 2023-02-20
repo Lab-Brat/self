@@ -30,7 +30,7 @@ Website:
     details:
       - "Buy domain names"
       - "Buy and deploy a VPS"
-      - "Learn Hugo Basics"
-      - "Create a website"
-      - "Self host a website"
-    status: "**@"
+      - "Deploy a Hugo website"
+      - "Make the website look decent"
+      - "Write a blog post on your website"
+    status: "***@"
