@@ -43,7 +43,7 @@ Education:
   - name: "Python"
     time: 2
     details: ">= 1h"
-    status: ""
+    status: "*"
 
   - name: "Linux"
     time: 2
