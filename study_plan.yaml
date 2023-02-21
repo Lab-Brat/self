@@ -31,6 +31,7 @@ Website:
       - "Buy domain names"
       - "Buy and deploy a VPS"
       - "Deploy a Hugo website"
+      - "Add Github Actions to it"
       - "Make the website look decent"
       - "Write a blog post on your website"
-    status: "***@"
+    status: "****@"
