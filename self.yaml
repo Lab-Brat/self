@@ -15,7 +15,7 @@ Exercise:
       - "Tuesday"
       - "Thursday"
       - "Friday"
-    status: "*"
+    status: "*_"
 
   - name: "Run"
     time:
@@ -26,7 +26,7 @@ Exercise:
   - name: "Walk"
     time: 4
     details: ">= 1h"
-    status: ""
+    status: "*"
 
 
 Language:
@@ -38,7 +38,7 @@ Language:
 Education:
   - name: "Reading"
     time: 6
-    status: "**"
+    status: "***"
 
   - name: "Python"
     time: 2
