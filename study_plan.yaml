@@ -12,21 +12,29 @@ Python:
   - name: "Learning Python 5ed"
     time: "Feb2023"
     details:
-      - "Chapter 20"
+      - "Chapter 22"
+      - "Chapter 23"
       - "Chapter 24"
+      - "Chapter 25"
     status: "@"
 
 Gentoo:
   - name: "Study Gentoo Linux"
-    time: "Feb2023"
+    time:
+      - "Feb2023"
+      - "Mar2023"
     details:
       - 'Install Gentoo on VirtualBox VM'
       - 'Grasp Basic Portage Usage'
-    status: "**"
+      - 'Create a local repository'
+      - 'Create an ebuild for a Python app'
+    status: "***@"
 
 Website:
   - name: "Build a Personal Website"
-    time: "Feb2023"
+    time:
+      - "Feb2023"
+      - "Mar2023"
     details:
       - "Buy domain names"
       - "Buy and deploy a VPS"
@@ -34,4 +42,4 @@ Website:
       - "Add Github Actions to it"
       - "Make the website look decent"
       - "Write a blog post on your website"
-    status: "****@"
+    status: "****@*"
