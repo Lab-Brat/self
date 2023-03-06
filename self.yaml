@@ -15,40 +15,40 @@ Exercise:
       - "Tuesday"
       - "Thursday"
       - "Friday"
-    status: "*_**"
+    status: "^"
 
   - name: "Run"
     time:
       - "Sunday"
     details: "Outdoors ~= 10km"
-    status: "*"
+    status: ""
 
   - name: "Walk"
     time: 4
     details: ">= 1h"
-    status: "***"
+    status: "*"
 
 
 Language:
   - name: "GRE Vocabulary"
     time: 3
-    status: "**"
+    status: ""
 
 
 Education:
   - name: "Reading"
     time: 6
-    status: "*****"
+    status: "*"
 
   - name: "Python"
     time: 2
     details: ">= 1h"
-    status: "**"
+    status: ""
 
   - name: "Linux"
     time: 2
     details: ">= 1h"
-    status: "**"
+    status: "*"
 
 
 Organization:
@@ -59,9 +59,9 @@ Organization:
       - "Wednesday"
       - "Thursday"
     details: "Write down daily tasks for the next workday"
-    status: "****"
+    status: "_*"
 
   - name: "Growth Plan"
     time: 3
     details: "Do things from your growth plan (study/tasks)"
-    status: "**"
+    status: ""
