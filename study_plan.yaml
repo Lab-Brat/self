@@ -28,7 +28,8 @@ Gentoo:
       - 'Grasp Basic Portage Usage'
       - 'Create a local repository'
       - 'Create an ebuild for a Python app'
-    status: "***@"
+      - 'Request access to dev branch in GURU'
+    status: "****@"
 
 Website:
   - name: "Build a Personal Website"
@@ -42,4 +43,5 @@ Website:
       - "Add Github Actions to it"
       - "Make the website look decent"
       - "Write a blog post on your website"
-    status: "****@*"
+      - "blog: Gentoo local report + ebuild"
+    status: "******@"
