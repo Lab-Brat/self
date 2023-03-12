@@ -1,4 +1,4 @@
-# self v0.4.0
+# self v0.5.0
 # status memo
 # * --> task complete
 # @ --> current task
@@ -15,30 +15,36 @@ Exercise:
       - "Tuesday"
       - "Thursday"
       - "Friday"
-    status: "^"
+    status: ""
 
-  - name: "Run"
+  - name: "Run+Walk"
     time:
       - "Sunday"
     details: "Outdoors ~= 10km"
     status: ""
 
-  - name: "Walk"
-    time: 4
+  - name: "Go out"
+    time: 5
     details: ">= 1h"
-    status: "*"
+    status: ""
 
 
 Language:
   - name: "GRE Vocabulary"
-    time: 3
+    time: 2
     status: ""
 
 
 Education:
-  - name: "Reading"
-    time: 6
-    status: "*"
+  - name: "Reading, Tech Stuff"
+    time: 4
+    details: ">= 1h"
+    status: ""
+
+  - name: "Reading, Non-Tech Stuff"
+    time: 3
+    details: ">= 30m"
+    status: ""
 
   - name: "Python"
     time: 2
@@ -48,20 +54,26 @@ Education:
   - name: "Linux"
     time: 2
     details: ">= 1h"
-    status: "*"
+    status: ""
 
 
-Organization:
+Productivity:
   - name: "Daily Tasks"
     time:
       - "Sunday"
       - "Monday"
+      - "Tuesday"
       - "Wednesday"
       - "Thursday"
     details: "Write down daily tasks for the next workday"
-    status: "_*"
+    status: ""
 
   - name: "Growth Plan"
     time: 3
     details: "Do things from your growth plan (study/tasks)"
     status: ""
+
+  - name: "Clean Apartment"
+    time:
+      - "Wednesday"
+      - "Seturday"
