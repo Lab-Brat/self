@@ -15,7 +15,7 @@ Exercise:
       - "Tuesday"
       - "Thursday"
       - "Friday"
-    status: ""
+    status: "*^"
 
   - name: "Run+Walk"
     time:
@@ -26,20 +26,20 @@ Exercise:
   - name: "Go out"
     time: 5
     details: ">= 1h"
-    status: ""
+    status: "**"
 
 
 Language:
   - name: "GRE Vocabulary"
     time: 2
-    status: ""
+    status: "*"
 
 
 Education:
   - name: "Reading, Tech Stuff"
     time: 4
     details: ">= 1h"
-    status: ""
+    status: "**"
 
   - name: "Reading, Non-Tech Stuff"
     time: 3
@@ -54,7 +54,7 @@ Education:
   - name: "Linux"
     time: 2
     details: ">= 1h"
-    status: ""
+    status: "*"
 
 
 Productivity:
@@ -66,14 +66,15 @@ Productivity:
       - "Wednesday"
       - "Thursday"
     details: "Write down daily tasks for the next workday"
-    status: ""
+    status: "___"
 
   - name: "Growth Plan"
     time: 3
     details: "Do things from your growth plan (study/tasks)"
-    status: ""
+    status: "*"
 
   - name: "Clean Apartment"
     time:
       - "Wednesday"
       - "Seturday"
+    status: "*"
